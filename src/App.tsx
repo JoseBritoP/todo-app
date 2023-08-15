@@ -23,6 +23,7 @@ const App = ():JSX.Element => {
 
   return (
     <div>
+      <h1>To do</h1>
       <Todos todos={todos}/>
     </div>
   )
