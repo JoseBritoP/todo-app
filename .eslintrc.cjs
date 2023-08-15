@@ -22,11 +22,13 @@ module.exports = {
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "./tsconfig.json" // https://github.com/eslint/typescript-eslint-parser#configuration
     },
     "plugins": [
         "react"
     ],
     "rules": {
+        "react/react-in-jsx-scope":"off"
     }
 }
