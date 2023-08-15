@@ -4,7 +4,7 @@ const mockTodos = [
   {
     id:'1',
     title: 'Todo 1' ,
-    completed: false
+    completed: true
   },
   {
     id:'2',
@@ -19,12 +19,18 @@ const mockTodos = [
 ]
 
 const App = ():JSX.Element => {
-  const [todos] = useState(mockTodos);
+  const [todos,setTodos] = useState(mockTodos);
+
+  
+  const handleRemove = (id:string) :void =>{
+    const newTodos = todos.filter((todo)=> todo.id !==id)
+     setTodos(newTodos);
+  };
 
   return (
-    <div>
+    <div className='todoapp'>
       <h1>To do</h1>
-      <Todos todos={todos}/>
+      <Todos todos={todos} handleRemove={handleRemove}/>
     </div>
   )
 }
